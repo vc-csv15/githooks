@@ -11,7 +11,7 @@ JENKINS_ADMIN_USER = 'ahknight'
 JENKINS_ADMIN_TOKEN = '58dbffb6d983bca8e2ed5b2f0db218b2'
 JENKINS_HOST = '209.129.49.16:8080'
 JENKINS_BASE_URL = 'http://' + JENKINS_ADMIN_USER + ':' + JENKINS_ADMIN_TOKEN + '@' + JENKINS_HOST
-JENKINS_BUILD_TOKEN = 'vcc-csv15-ada-lovelace'
+JENKINS_BUILD_TOKEN = 'vcc-csv13-ada-lovelace'
 JENKINS_DEFAULT_RECIPIENT = '$DEFAULT_RECIPIENTS'
 
 GITHUB_BASE_URL = 'https://github.com/' + project.GITHUB_ORGANIZATION + '/'
@@ -62,7 +62,7 @@ def get_git_user_email():
 # instead of their forked repository.
 print('Attempting to push commits to ' + url)
 if re.search('/' + project.GITHUB_ORGANIZATION + '/' 'ex[0-9]{2}.+\\.git', url) is not None:
-    print("You are trying to push to the assignment's original URL. Please see https://github.com/vcc-csv15-fall2018/Course-Information/wiki/Changing-the-Remote-URL-of-your-Local-Repository for " +
+    print("You are trying to push to the assignment's original URL. Please see https://github.com/vcc-csv13-fall2018/Course-Information/wiki/Changing-the-Remote-URL-of-your-Local-Repository for " +
           "directions on correcting this in eclipse")
     sys.exit(1)
 
@@ -70,7 +70,7 @@ if re.search('/' + project.GITHUB_ORGANIZATION + '/' 'ex[0-9]{2}.+\\.git', url) 
 email = get_git_user_email()
 emailMatch = re.search('([^@]+)@vcccd.edu', email)
 if emailMatch is None:
-    print("You need to set your user.email config properly in git. Please see https://github.com/vcc-csv15-fall2018/Course-Information/wiki/Setting-Your-Email-Address-for-Git-Github")
+    print("You need to set your user.email config properly in git. Please see https://github.com/vcc-csv13-fall2018/Course-Information/wiki/Setting-Your-Email-Address-for-Git-Github")
     sys.exit(1)
 
 username = emailMatch.group(1)
